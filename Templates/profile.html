@@ -21,10 +21,10 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
             aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
+            <button><a href="/">Home</a></button>
             <button><a href="tweet/add/">Tweet</a></button>
-            <button><a href="/profile/{{ tweets.author }}">Profile</a></button>
             <button><a href="">Notifications</a></button>
-            <button><a href="signup/">Signup</a></button>
+            <button><a href="">Signup</a></button>
             <button><a href="/logout/">Logout</a></button>
             {% if request.user.is_authenticated %}
             
@@ -39,9 +39,7 @@
     {% for tweet in tweets %}
         <ul>
 
-            <li>{{ tweet.message }}</li>
-            <li>{{ tweet.publish_date}}</li>
-            <li>{{ tweet.author }}</li>
+        
         
         </ul>
     {% endfor %}

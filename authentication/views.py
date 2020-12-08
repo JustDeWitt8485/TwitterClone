@@ -2,16 +2,9 @@ from django.contrib.auth import authenticate, login, logout
 
 from django.shortcuts import HttpResponseRedirect, render, reverse
 
-from twitteruser.models import TwitterUser
-
 from .forms import LoginForm
 
 # Create your views here.
-
-
-def index(request):
-    html = 'index.html'
-    return render(request, html,  {})
 
 
 def login_view(request):
@@ -24,7 +17,7 @@ def login_view(request):
             if user:
                 login(request, user)
                 return HttpResponseRedirect(request.GET.get('next',
-                                                            reverse('homepage')))
+                                            reverse('homepage')))
     form = LoginForm()
     return render(request, 'login.html', {'form': form})
 

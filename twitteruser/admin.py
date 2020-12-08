@@ -6,4 +6,15 @@ from twitteruser.models import TwitterUser
 # Register your models here.
 
 
-admin.site.register(TwitterUser, UserAdmin)
+ADDITIONAL_USER_FIELD = (
+    (None, {'fields': ('name',)}),
+)
+
+
+class CustomUserAdmin(UserAdmin):
+    view = ['username', 'name']
+    add_fieldsets = UserAdmin.add_fieldsets + ADDITIONAL_USER_FIELD
+    fieldsets = UserAdmin.fieldsets + ADDITIONAL_USER_FIELD
+
+
+admin.site.register(TwitterUser, CustomUserAdmin)
