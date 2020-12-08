@@ -10,7 +10,3 @@ class TwitterUser(AbstractUser):
 
     def __str__(self):
         return f"{self.name}"
-
-
-class User(models.Model):
-    user = models.OneToOneField(TwitterUser, on_delete=models.CASCADE, primary_key=True)
