@@ -25,6 +25,8 @@ urlpatterns = [
     path('tweet/add/', views.add_tweet, name='addtweet'),
     path('signup/', views.sign_up, name='signup'),
     path('profile/<int:author_id>/', views.profile_view, name='profilepage'),
+    path('tweet/<int:tweet_id>/', views.tweet_view, name='tweetpage'),
+    path('follow/<int:author_id>/', views.follow_view),
     path('login/', views.login_view, name='loginpage'),
     path('logout/', views.logout_view, name='logoutpage'),
     path('admin/', admin.site.urls),

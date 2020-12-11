@@ -22,7 +22,7 @@
             aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             <button><a href="tweet/add/">Tweet</a></button>
-            <button><a href="/profile/{{ tweets.author }}">Profile</a></button>
+            <button><a href="/profile/{{ request.user.id }}">Profile</a></button>
             <button><a href="">Notifications</a></button>
             <button><a href="signup/">Signup</a></button>
             <button><a href="/logout/">Logout</a></button>
@@ -33,15 +33,17 @@
         </button>
     </nav>
 </div>
-
+<br>
+<h1>Home</h1>
+<hr>
 <body>
 
     {% for tweet in tweets %}
         <ul>
 
-            <li>{{ tweet.message }}</li>
+            <li><a href="/tweet/{{ tweet.id }}">{{ tweet.message }}</a></li>
             <li>{{ tweet.publish_date}}</li>
-            <li>{{ tweet.author }}</li>
+            <li><a href="profile/{{ tweet.id }}">{{ tweet.author }}</a></li>
         
         </ul>
     {% endfor %}
