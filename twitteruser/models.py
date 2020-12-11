@@ -9,8 +9,8 @@ class TwitterUser(AbstractUser):
     name = models.CharField(max_length=150, null=True)
     follow = models.ManyToManyField("self", related_name='follow')
 
-    # def __init__(self):
-    #     return f"{self.follow}"
+    def follows(self):
+        return self.follow
 
     def __str__(self):
         return f"{self.name}"

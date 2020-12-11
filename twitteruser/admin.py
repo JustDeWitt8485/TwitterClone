@@ -7,12 +7,12 @@ from twitteruser.models import TwitterUser
 
 
 ADDITIONAL_USER_FIELD = (
-    (None, {'fields': ('name',)}),
+    (None, {'fields': ('name', 'follow')}),
 )
 
 
 class CustomUserAdmin(UserAdmin):
-    view = ['username', 'name']
+    view = ['username', 'name', 'followgit']
     add_fieldsets = UserAdmin.add_fieldsets + ADDITIONAL_USER_FIELD
     fieldsets = UserAdmin.fieldsets + ADDITIONAL_USER_FIELD
 
