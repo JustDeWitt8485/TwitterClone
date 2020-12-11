@@ -26,13 +26,9 @@ def profile_view(request, author_id):
     html = 'profile.html'
     the_author = TwitterUser.objects.get(id=author_id)
     tweets = Tweets.objects.filter(author=the_author).order_by('publish_date')
-    context = {
-        'author': the_author,
-        'tweets': tweets
-    }
-    return render(
-        request, html, context
-    )
+    total_follows = the_author.total_follows()
+    context = {'author': the_author, 'tweets': tweets, 'total_follows': total_follows}
+    return render(request, html, context)
 
 
 def follow_view(request, author_id):
@@ -44,12 +40,8 @@ def follow_view(request, author_id):
 def tweet_view(request, tweet_id):
     html = 'tweet.html'
     tweets = Tweets.objects.filter(id=tweet_id).order_by('publish_date')
-    context = {
-        'tweets': tweets
-    }
-    return render(
-        request, html, context
-    )
+    context = {'tweets': tweets}
+    return render(request, html, context)
 
 
 def sign_up(request):

@@ -12,7 +12,7 @@ ADDITIONAL_USER_FIELD = (
 
 
 class CustomUserAdmin(UserAdmin):
-    view = ['username', 'name', 'followgit']
+    view = ['username', 'name', 'follow']
     add_fieldsets = UserAdmin.add_fieldsets + ADDITIONAL_USER_FIELD
     fieldsets = UserAdmin.fieldsets + ADDITIONAL_USER_FIELD
 

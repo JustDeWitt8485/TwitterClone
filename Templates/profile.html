@@ -22,7 +22,7 @@
             aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             <button><a href="/">Home</a></button>
-            <button><a href="tweet/add/">Tweet</a></button>
+            <button><a href="/addtweet/">Tweet</a></button>
             <button><a href="">Notifications</a></button>
             <button><a href="/signup/">Signup</a></button>
             <button><a href="/logout/">Logout</a></button>
@@ -33,10 +33,16 @@
         </button>
     </nav>
 </div>
+
 <br>
 <h1>Profile</h1>
 <hr>
 
+<div>
+    <h3>Total Follows: {{total_follows}}</h3>
+</div>
+
+<hr>
 
 <form action="/follow/{{author.id}}/" method="POST">
 

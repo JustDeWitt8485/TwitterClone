@@ -22,7 +22,7 @@ from twitteruser import views
 
 urlpatterns = [
     path('', views.index, name='homepage'),
-    path('tweet/add/', views.add_tweet, name='addtweet'),
+    path('addtweet/', views.add_tweet, name='addtweet'),
     path('signup/', views.sign_up, name='signup'),
     path('profile/<int:author_id>/', views.profile_view, name='profilepage'),
     path('tweet/<int:tweet_id>/', views.tweet_view, name='tweetpage'),
