@@ -12,8 +12,5 @@ class TwitterUser(AbstractUser):
     def total_follows(self):
         return self.follow.count()
 
-    def follows(self):
-        return self.follow
-
     def __str__(self):
         return f"{self.name}"
